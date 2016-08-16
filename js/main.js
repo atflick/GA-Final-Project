@@ -1,25 +1,3 @@
-// Next steps:
-// test each part
-// convert input into an array
-// count number of characters in the array
-// use 'for' method to apply full function multiple times to each character in array
-// Clamp initialization for each carousel title item
- //  // 1- Setup array and find each carousel-title instance in homepage DOM, get ID attribute
- //  var carouselItemArray = [];
- //  $('.carousel-title').each(function( index ) {
- //    carouselItemArray[index] = $(this).attr('id');
- //  });
-
- //  // 2- Iterate through carouselItemArray and create $clamp instance for each array item
- //  var index, len;
- //  for (index = 0, len = carouselItemArray.length; index < len; ++index) {
- //    var clampTarget = document.getElementById(carouselItemArray[index]);
- //    $clamp(clampTarget, {clamp: 'auto'});
- //  }
-
-
-// Taking input letter from user and making it lowercase
-//$('#').val().trim().toLowerCase();
 
  
 function encode(inputLetter) {
