@@ -180,6 +180,7 @@ switch (trimmedInput) {
   default:
     inputLetter = encodedOutput;    
 }
+  
   if (inputLetter == inputLetter.toUpperCase()) {
     return encodedOutput.toUpperCase();
   }
