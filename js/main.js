@@ -1,6 +1,6 @@
 function encode(inputLetter) {
 var numericInput; // assigning letters to numbers in order to apply a mathematical function
-switch (inputLetter) {
+switch (inputLetter.toLowerCase()) {
   case 'a':
     numericInput = 1;
     break;
@@ -180,12 +180,16 @@ switch (trimmedInput) {
   default:
     inputLetter = encodedOutput;    
 }
-
-return encodedOutput;
+  if (inputLetter == inputLetter.toUpperCase()) {
+    return encodedOutput.toUpperCase();
+  }
+  else {
+    return encodedOutput;
+  }  
 }
 
 function encodeThis () {
-  var practiceText = document.getElementById('readable').value.toLowerCase(); 
+  var practiceText = document.getElementById('readable').value; 
   var inputText = practiceText.split('');
   var encodedText = '';
   var i;
@@ -194,9 +198,12 @@ function encodeThis () {
   }
   document.getElementById('encoded').value = encodedText;
 }
+
+// DECODE SCRIPT
+
 function decode(inputLetter2) {
 var numericInput2; // assigning letters to numbers in order to apply a mathematical function
-switch (inputLetter2) {
+switch (inputLetter2.toLowerCase()) {
   case 'a':
     numericInput2 = 1;
     break;
@@ -279,7 +286,7 @@ switch (inputLetter2) {
   return inputLetter2;
     ;    // if not a letter such as # " ' etc., return same value
 };
-var key2 = document.getElementById('key').value.toLowerCase();
+var key2 = document.getElementById('key').value;
 var keyedInput2 = numericInput2 - (key2 % 26);
 // trimming that number so it will always be within 1-26
 var trimmedInput2;
@@ -375,12 +382,16 @@ switch (trimmedInput2) {
   default:
     inputLetter2 = decodedOutput;    
 }
-
-return decodedOutput;
+  if (inputLetter2 == inputLetter2.toUpperCase()) {
+    return decodedOutput.toUpperCase();
+  }
+  else {
+    return decodedOutput;
+  }
 }
 
 function decodeThis () {
-  var decodedText = document.getElementById('encoded').value.toLowerCase(); 
+  var decodedText = document.getElementById('encoded').value; 
   var decodedArr = decodedText.split('');
   var decodedTextOutput = '';
   var i;
