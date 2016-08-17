@@ -1,5 +1,3 @@
-
- 
 function encode(inputLetter) {
 var numericInput; // assigning letters to numbers in order to apply a mathematical function
 switch (inputLetter) {
@@ -85,18 +83,18 @@ switch (inputLetter) {
   return inputLetter;
     ;    // if not a letter such as # " ' etc., return same value
 };
-var key = 200; // $('#key');
+var key = document.getElementById('key').value;
 // applying very simple function based on the key from the user (number from 1-10)
-var keyedInput = numericInput + key;
+var keyedInput = numericInput + (key % 26);
 // trimming that number so it will always be within 1-26
 var trimmedInput;
 
 if (keyedInput > 26) {
-		trimmedInput = keyedInput % 26 + 1;
-	}
-	else {
-		trimmedInput = keyedInput;
-	}
+    trimmedInput = keyedInput - 26;
+  }
+  else {
+    trimmedInput = keyedInput;
+  }
 
 // taking that number and reversing it back to a letter using the same scheme
 var encodedOutput;
@@ -187,7 +185,7 @@ return encodedOutput;
 }
 
 function encodeThis () {
-  var practiceText = document.getElementById('readable').value; 
+  var practiceText = document.getElementById('readable').value.toLowerCase(); 
   var inputText = practiceText.split('');
   var encodedText = '';
   var i;
@@ -195,4 +193,199 @@ function encodeThis () {
   encodedText += encode(inputText[i]);
   }
   document.getElementById('encoded').value = encodedText;
+}
+function decode(inputLetter2) {
+var numericInput2; // assigning letters to numbers in order to apply a mathematical function
+switch (inputLetter2) {
+  case 'a':
+    numericInput2 = 1;
+    break;
+  case 'b':
+    numericInput2 = 2;
+    break;    
+  case 'c':
+    numericInput2 = 3;
+    break;
+  case 'd':
+    numericInput2 = 4;
+    break;    
+  case 'e':
+    numericInput2 = 5;
+    break;
+  case 'f':
+    numericInput2 = 6;
+    break;
+  case 'g':
+    numericInput2 = 7;
+    break;        
+  case 'h':
+    numericInput2 = 8;
+    break;
+  case 'i':
+    numericInput2 = 9;
+    break;
+  case 'j':
+    numericInput2 = 10;
+    break;
+  case 'k':
+    numericInput2 = 11;
+    break;
+  case 'l':
+    numericInput2 = 12;
+    break;
+  case 'm':
+    numericInput2 = 13;
+    break;
+  case 'n':
+    numericInput2 = 14;
+    break;    
+  case 'o':
+    numericInput2 = 15;
+    break;
+  case 'p':
+    numericInput2 = 16;
+    break;    
+  case 'q':
+    numericInput2 = 17;
+    break;
+  case 'r':
+    numericInput2 = 18;
+    break;
+  case 's':
+    numericInput2 = 19;
+    break;        
+  case 't':
+    numericInput2 = 20;
+    break;
+  case 'u':
+    numericInput2 = 21;
+    break;
+  case 'v':
+    numericInput2 = 22;
+    break;
+  case 'w':
+    numericInput2 = 23;
+    break;
+  case 'x':
+    numericInput2 = 24;
+    break; 
+  case 'y':
+    numericInput2 = 25;
+    break;
+  case 'z':
+    numericInput2 = 26;
+    break;
+  default:
+  return inputLetter2;
+    ;    // if not a letter such as # " ' etc., return same value
+};
+var key2 = document.getElementById('key').value.toLowerCase();
+var keyedInput2 = numericInput2 - (key2 % 26);
+// trimming that number so it will always be within 1-26
+var trimmedInput2;
+
+if (keyedInput2 < 1) {
+    trimmedInput2 = keyedInput2 + 26;
+  }
+  else {
+    trimmedInput2 = keyedInput2;
+  }
+
+// taking that number and reversing it back to a letter using the same scheme
+var decodedOutput;
+switch (trimmedInput2) { 
+  case 1:
+    decodedOutput = 'a';
+    break;
+  case 2:
+    decodedOutput = 'b';
+    break;    
+  case 3:
+    decodedOutput = 'c';
+    break;
+  case 4:
+    decodedOutput = 'd';
+    break;    
+  case 5:
+    decodedOutput = 'e';
+    break;
+  case 6:
+    decodedOutput = 'f';
+    break;
+  case 7:
+    decodedOutput = 'g';
+    break;        
+  case 8:
+    decodedOutput = 'h';
+    break;
+  case 9:
+    decodedOutput = 'i';
+    break;
+  case 10:
+    decodedOutput = 'j';
+    break;
+  case 11:
+    decodedOutput = 'k';
+    break;
+  case 12:
+    decodedOutput = 'l';
+    break;
+  case 13:
+    decodedOutput = 'm';
+    break;
+  case 14:
+    decodedOutput = 'n';
+    break;    
+  case 15:
+    decodedOutput = 'o';
+    break;
+  case 16:
+    decodedOutput = 'p';
+    break;    
+  case 17:
+    decodedOutput = 'q';
+    break;
+  case 18:
+    decodedOutput = 'r';
+    break;
+  case 19:
+    decodedOutput = 's';
+    break;        
+  case 20:
+    decodedOutput = 't';
+    break;
+  case 21:
+    decodedOutput = 'u';
+    break;
+  case 22:
+    decodedOutput = 'v';
+    break;
+  case 23:
+    decodedOutput = 'w';
+    break;
+  case 24:
+    decodedOutput = 'x';
+    break; 
+  case 25:
+    decodedOutput = 'y';
+    break;
+  case 26:
+    decodedOutput = 'z';
+    break;
+  default:
+    inputLetter2 = decodedOutput;    
+}
+
+return decodedOutput;
+}
+
+function decodeThis () {
+  var decodedText = document.getElementById('encoded').value.toLowerCase(); 
+  var decodedArr = decodedText.split('');
+  var decodedTextOutput = '';
+  var i;
+  for ( i = 0; i < decodedArr.length; i++) {
+  decodedTextOutput += decode(decodedArr[i]);
+  }
+  document.getElementById('readable').value = decodedTextOutput;
 }
